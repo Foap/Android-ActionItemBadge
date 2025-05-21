@@ -127,7 +127,4 @@ public class ActionItemBadgeAdder {
         }
 
         item.setActionView(style.getLayout());
-        ActionItemBadge.update(activity, item, icon, style, badgeCount, listener);
-        return item;
-    }
-}
+        ActionItemBadge.update(activity, item, icon, style, badg

@@ -31,4 +31,4 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
 }
 
-apply from: '../gradle-release.gradle'
+//apply from: '../gradle-release.gradle'
