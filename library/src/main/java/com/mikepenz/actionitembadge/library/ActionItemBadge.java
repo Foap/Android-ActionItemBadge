@@ -265,33 +265,4 @@ public class ActionItemBadge {
             UIUtil.setBackground(badgeView,
                     new BadgeDrawableBuilder().corners(style.getCorner()).color(style.getColor())
                             .colorPressed(style.getColorPressed())
-                            .strokeColor(style.getStrokeColor()).stroke(style.getStroke())
-                            .build(activity));
-            badgeView.setTextColor(style.getTextColor());
-        }
-
-        //Manage min value
-        if (badgeCount == null) {
-            badgeView.setVisibility(View.GONE);
-        } else {
-            badgeView.setVisibility(View.VISIBLE);
-            badgeView.setText(badgeCount);
-        }
-
-        menu.setVisible(true);
-    }
-
-
-    /**
-     * hide the given menu item
-     */
-    public static void hide(MenuItem menu) {
-        menu.setVisible(false);
-    }
-
-
-    public interface ActionItemBadgeListener {
-
-        boolean onOptionsItemSelected(MenuItem menu);
-    }
-}
+                            .strokeCo
