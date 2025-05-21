@@ -42,7 +42,7 @@ afterEvaluate {
 
                 groupId = 'com.github.Foap'
                 artifactId = 'Android-ActionItemBadge'
-                version = '1.0.7'
+                version = '1.0.8'
             }
         }
     }
