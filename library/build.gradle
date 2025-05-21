@@ -37,13 +37,12 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            create("release", MavenPublication::class) {
-                groupId = "com.github.Foap"
-                artifactId = "Android-ActionItemBadge"
-                version = "1.0.9"
+            create("release", MavenPublication) {
+                groupId = 'com.github.Foap'
+                artifactId = 'Android-ActionItemBadge'
+                version = '1.0.10'
 
-                // Safely reference Android's release variant
-                from(components.findByName("release"))
+                from components.findByName("release")
             }
         }
     }
