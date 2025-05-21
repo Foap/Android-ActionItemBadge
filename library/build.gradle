@@ -1,3 +1,4 @@
+apply plugin: 'maven-publish'
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
@@ -32,3 +33,17 @@ dependencies {
 }
 
 //apply from: '../gradle-release.gradle'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.Foap'
+                artifactId = 'Android-ActionItemBadge'
+                version = '1.0.7'
+            }
+        }
+    }
+}
