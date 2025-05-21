@@ -33,11 +33,12 @@ buildscript {
             url "https://plugins.gradle.org/m2/"
         }
     }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-//        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        // classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4' // ❌ intentionally disabled
     }
 }
 
@@ -48,4 +49,6 @@ allprojects {
         google()
         jcenter()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
-     
+        maven { url 'https://jitpack.io' }
+    }
+}
