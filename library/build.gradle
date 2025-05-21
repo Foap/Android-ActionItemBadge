@@ -1,6 +1,6 @@
-apply plugin: 'maven-publish'
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion setup.compileSdk
@@ -37,12 +37,13 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            release(MavenPublication) {
-                from components.release
+            create("release", MavenPublication::class) {
+                groupId = "com.github.Foap"
+                artifactId = "Android-ActionItemBadge"
+                version = "1.0.9"
 
-                groupId = 'com.github.Foap'
-                artifactId = 'Android-ActionItemBadge'
-                version = '1.0.8'
+                // Safely reference Android's release variant
+                from(components.findByName("release"))
             }
         }
     }
