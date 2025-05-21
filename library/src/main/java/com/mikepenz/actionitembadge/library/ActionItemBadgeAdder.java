@@ -12,6 +12,7 @@ import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.iconics.typeface.IIcon;
 
 public class ActionItemBadgeAdder {
+
     public ActionItemBadgeAdder() {
 
     }
@@ -87,7 +88,8 @@ public class ActionItemBadgeAdder {
     }
 
     public MenuItem add(IIcon icon, int iconColor, int badgeCount) {
-        return add(new IconicsDrawable(activity, icon).color(IconicsColor.colorInt(iconColor)).actionBar(), ActionItemBadge.BadgeStyles.GREY, badgeCount);
+        return add(new IconicsDrawable(activity, icon).color(IconicsColor.colorInt(iconColor))
+                .actionBar(), ActionItemBadge.BadgeStyles.GREY, badgeCount);
     }
 
     public MenuItem add(Drawable icon, int badgeCount) {
@@ -103,14 +105,16 @@ public class ActionItemBadgeAdder {
     }
 
     public MenuItem add(IIcon icon, int iconColor, BadgeStyle style, int badgeCount) {
-        return add(new IconicsDrawable(activity, icon).color(IconicsColor.colorInt(iconColor)).actionBar(), style, badgeCount, null);
+        return add(new IconicsDrawable(activity, icon).color(IconicsColor.colorInt(iconColor))
+                .actionBar(), style, badgeCount, null);
     }
 
     public MenuItem add(Drawable icon, ActionItemBadge.BadgeStyles style, int badgeCount) {
         return add(icon, style.getStyle(), badgeCount, null);
     }
 
-    public MenuItem add(Drawable icon, BadgeStyle style, int badgeCount, ActionItemBadge.ActionItemBadgeListener listener) {
+    public MenuItem add(Drawable icon, BadgeStyle style, int badgeCount,
+            ActionItemBadge.ActionItemBadgeListener listener) {
         MenuItem item;
         if (groupId != null && itemId != null && order != null) {
             item = menu.add(groupId, itemId, order, title);
