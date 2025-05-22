@@ -48,6 +48,8 @@ public class ActionItemBadge {
                         Color.parseColor("#606060"), Color.parseColor("#3e3e3e"), Color.WHITE)),
         RED_LARGE(new BadgeStyle(BadgeStyle.Style.LARGE, R.layout.menu_action_item_badge_large,
                 Color.parseColor("#FF4444"), Color.parseColor("#CC0000"), Color.WHITE)),
+        RED_SMALL(new BadgeStyle(BadgeStyle.Style.LARGE, R.layout.menu_action_item_badge_small,
+                Color.parseColor("#FF4444"), Color.parseColor("#CC0000"), Color.WHITE)),
         BLUE_LARGE(new BadgeStyle(BadgeStyle.Style.LARGE, R.layout.menu_action_item_badge_large,
                 Color.parseColor("#33B5E5"), Color.parseColor("#0099CC"), Color.WHITE)),
         GREEN_LARGE(new BadgeStyle(BadgeStyle.Style.LARGE, R.layout.menu_action_item_badge_large,
