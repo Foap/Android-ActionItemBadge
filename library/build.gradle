@@ -36,4 +36,32 @@ dependencies {
 //afterEvaluate {
 //    publishing {
 //        publications {
-//            cre
+//            create("release", MavenPublication) {
+//                groupId = 'com.github.Foap'
+//                artifactId = 'Android-ActionItemBadge'
+//                version = '1.0.14'
+//
+//                components.withType(SoftwareComponent) { component ->
+//                    if (component.name == 'release') {
+//                        from component
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create("release", MavenPublication) {
+                groupId = 'com.github.Foap'
+                artifactId = 'Android-ActionItemBadge'
+                version = '1.0.15'
+
+                // This ensures the actual AAR gets published
+                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+            }
+        }
+    }
+}
