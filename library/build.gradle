@@ -39,9 +39,13 @@ afterEvaluate {
             create("release", MavenPublication) {
                 groupId = 'com.github.Foap'
                 artifactId = 'Android-ActionItemBadge'
-                version = '1.0.12'
+                version = '1.0.13'
 
-                from(components.findByName("release"))
+                components.withType(SoftwareComponent) { component ->
+                    if (component.name == 'release') {
+                        from component
+                    }
+                }
             }
         }
     }
