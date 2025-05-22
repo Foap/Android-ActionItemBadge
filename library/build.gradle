@@ -33,20 +33,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create("release", MavenPublication) {
-                groupId = 'com.github.Foap'
-                artifactId = 'Android-ActionItemBadge'
-                version = '1.0.14'
-
-                components.withType(SoftwareComponent) { component ->
-                    if (component.name == 'release') {
-                        from component
-                    }
-                }
-            }
-        }
-    }
-}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            cre
