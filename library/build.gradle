@@ -3,15 +3,16 @@ apply plugin: 'kotlin-android'
 apply plugin: 'maven-publish'
 
 android {
-    compileSdkVersion setup.compileSdk
-    buildToolsVersion setup.buildTools
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
 
     defaultConfig {
-        minSdkVersion setup.minSdk
-        targetSdkVersion setup.targetSdk
-        versionCode release.versionCode
-        versionName release.versionName
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 4000
+        versionName "4.0.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -32,18 +33,4 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
 }
 
-//apply from: '../gradle-release.gradle'
-
-afterEvaluate {
-    publishing {
-        publications {
-            create("release", MavenPublication) {
-                groupId = 'com.github.Foap'
-                artifactId = 'Android-ActionItemBadge'
-                version = '1.0.10'
-
-                from components.findByName("release")
-            }
-        }
-    }
-}
+//apply 
