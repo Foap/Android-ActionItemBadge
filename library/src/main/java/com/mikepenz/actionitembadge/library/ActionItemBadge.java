@@ -1,5 +1,12 @@
 package com.mikepenz.actionitembadge.library;
 
+import com.mikepenz.actionitembadge.library.utils.BadgeDrawableBuilder;
+import com.mikepenz.actionitembadge.library.utils.BadgeStyle;
+import com.mikepenz.actionitembadge.library.utils.UIUtil;
+import com.mikepenz.iconics.IconicsColor;
+import com.mikepenz.iconics.IconicsDrawable;
+import com.mikepenz.iconics.typeface.IIcon;
+
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -13,13 +20,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.mikepenz.actionitembadge.library.utils.BadgeDrawableBuilder;
-import com.mikepenz.actionitembadge.library.utils.BadgeStyle;
-import com.mikepenz.actionitembadge.library.utils.UIUtil;
-import com.mikepenz.iconics.IconicsColor;
-import com.mikepenz.iconics.IconicsDrawable;
-import com.mikepenz.iconics.typeface.IIcon;
 
 /**
  * Created by mikepenz on 23.07.14.
@@ -287,8 +287,14 @@ public class ActionItemBadge {
     /**
      * hide the given menu item
      */
-    public static void hide(MenuItem menu) {
-        menu.setVisible(false);
+    public static void hide(MenuItem menuItem) {
+//        menu.setVisible(false);
+        if (menuItem != null && menuItem.getActionView() != null) {
+            View badge = menuItem.getActionView().findViewById(R.id.menu_badge);
+            if (badge != null) {
+                badge.setVisibility(View.GONE);
+            }
+        }
     }
 
 
